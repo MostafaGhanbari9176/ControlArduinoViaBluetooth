@@ -34,7 +34,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
     private Handler handler = new Handler();
     BluetoothAdapter bluetoothAdapter;
     BluetoothSocket bluetoothSocket = null;
-    private ConnectedThread connectedThread;
+    private ConnectedThread connectedThread = new ConnectedThread(bluetoothSocket);
     Set<BluetoothDevice> devices;
     ArrayList<DeviceModel> devicesSource = new ArrayList<>();
     AdapterDeviceList adapter;
@@ -56,6 +56,16 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
             @Override
             public void run() {
                 Toast.makeText(ActivityMain.this, message, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void changeIamgeState(){
+        handler.post(new TimerTask() {
+            @Override
+            public void run() {
+                imgStatus.setImageResource(R.drawable.ic_bluetooth_connected);
+                txtStatus.setText("متصل");
             }
         });
     }
@@ -172,6 +182,9 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
             imgStatus.setImageResource(R.drawable.ic_bluetooth_disabled);
             txtStatus.setText("بلوتوث خاموش");
             txtStatus.setHint("off");
+            devicesSource.clear();
+            if (adapter != null)
+                adapter.notifyDataSetChanged();
         } else {
             Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(intent, ReqForEnablingBluetooth);
@@ -211,7 +224,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
 
                 connectedThread = new ConnectedThread(bluetoothSocket);
                 connectedThread.start();
-                showMessage(" Connected ... ");
+                changeIamgeState();
 
 
             }catch (Exception e){

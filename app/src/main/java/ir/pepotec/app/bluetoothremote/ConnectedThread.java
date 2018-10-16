@@ -22,7 +22,7 @@ public class ConnectedThread extends Thread {
         try {
             tmpIn = socket.getInputStream();
             tmpOut = socket.getOutputStream();
-        } catch (IOException e) { }
+        } catch (Exception e) { }
 
         mmInStream = tmpIn;
         mmOutStream = tmpOut;
@@ -57,7 +57,7 @@ public class ConnectedThread extends Thread {
         byte[] bytes = input.getBytes();           //converts entered String into bytes
         try {
             mmOutStream.write(bytes);
-        } catch (IOException e) { }
+        } catch (Exception e) { }
     }
 
     /* Call this from the main activity to shutdown the connection */
