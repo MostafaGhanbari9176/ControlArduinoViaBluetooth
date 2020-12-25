@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="ChannelA" />
+
+        <TextView
+            android:id="@+id/txtAValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="200" />
+
+        <SeekBar
+            android:id="@+id/sbarA"
+            android:max="255"
+            android:progress="0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:rotation="270"
+            android:theme="@style/Widget.AppCompat.SeekBar.Discrete" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="ChannelB" />
+
+        <TextView
+            android:id="@+id/txtBValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="200" />
+
+        <SeekBar
+            android:id="@+id/sbarB"
+            android:max="255"
+            android:progress="0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:rotation="270"
+            android:theme="@style/Widget.AppCompat.SeekBar.Discrete" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="ChannelC" />
+
+        <TextView
+            android:id="@+id/txtCValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="200" />
+
+        <SeekBar
+            android:id="@+id/sbarC"
+            android:max="255"
+            android:progress="0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:rotation="270"
+            android:theme="@style/Widget.AppCompat.SeekBar.Discrete" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="ChannelD" />
+
+        <TextView
+            android:id="@+id/txtDValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="200" />
+
+        <SeekBar
+            android:id="@+id/sbarD"
+            android:max="255"
+            android:progress="0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:rotation="270"
+            android:theme="@style/Widget.AppCompat.SeekBar.Discrete" />
+
+    </LinearLayout>
+
+</LinearLayout>

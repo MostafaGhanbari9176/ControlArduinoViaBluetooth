@@ -9,18 +9,16 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Handler;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.TimerTask;
@@ -53,8 +51,10 @@ public class ActivityMain extends AppCompatActivity implements ConnectedThread.D
                 connectedThread.cancel();
             }catch(Exception ignored){}
         }
-        else
+        else if (fragment instanceof FragmentControl)
             ((FragmentControl) fragment).context = this;
+        else
+            ((FragmentChannelControl) fragment).ctx = this;
 
         this.getSupportFragmentManager().beginTransaction().replace(R.id.contentMain, fragment).commit();
     }
@@ -77,7 +77,7 @@ public class ActivityMain extends AppCompatActivity implements ConnectedThread.D
             @Override
             public void run() {
                 dialog.cancel();
-                replaceView(new FragmentControl());
+                replaceView(new FragmentChannelControl());
             }
         });
     }

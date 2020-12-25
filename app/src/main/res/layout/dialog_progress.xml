@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layoutDirection="rtl">
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/light"
@@ -25,5 +25,5 @@
                 android:src="@drawable/ic_bluetooth_connected" />
         </LinearLayout>
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 </LinearLayout>
